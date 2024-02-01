@@ -56,6 +56,7 @@ defmodule HackerNewsWeb.Router do
   if @env == :test do
     scope "/mocks", HackerNews.Infra.Mocks do
       pipe_through :api
+
       scope "/hackernews", HackerNews do
         get "/beststories.json", BestStories.API, :beststories
         get "/item/:id", BestStories.API, :item

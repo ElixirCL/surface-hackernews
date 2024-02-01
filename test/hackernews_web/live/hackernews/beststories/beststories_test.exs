@@ -20,15 +20,15 @@ defmodule HackerNewsWeb.HackerNews.Live.BestStoriesTest do
       # then we use Floki to parse the html
       {:ok, document} = Floki.parse_document(html)
 
-      entries =
-        Floki.find(document, ".entry")
+      entries = Floki.find(document, ".entry")
 
       assert Enum.count(entries) == 10
 
-      titles = Floki.find(document, ".entry-title")
-      |> Enum.map(fn {_htag, _hattrs, [{_atag, _aattrs, [title]}]} -> title end)
+      titles =
+        Floki.find(document, ".entry-title")
+        |> Enum.map(fn {_htag, _hattrs, [{_atag, _aattrs, [title]}]} -> title end)
 
-      assert titles == Enum.map(Mock.data, fn {_k, v} -> v["title"] end)
+      assert titles == Enum.map(Mock.data(), fn {_k, v} -> v["title"] end)
     end
   end
 end

@@ -8,7 +8,7 @@ defmodule HackerNews.Infra.Mocks.HackerNews.BestStories.API do
       "id" => 1,
       "kids" => [100, 200, 300],
       "score" => 508,
-      "time" => 1706564398,
+      "time" => 1_706_564_398,
       "title" => "Title 1",
       "type" => "story",
       "url" => "//mocks/hackernews/item/1.json"
@@ -19,7 +19,7 @@ defmodule HackerNews.Infra.Mocks.HackerNews.BestStories.API do
       "id" => 2,
       "kids" => [400, 500, 600],
       "score" => 51,
-      "time" => 1706564391,
+      "time" => 1_706_564_391,
       "title" => "Title 2",
       "type" => "story",
       "url" => "//mocks/hackernews/item/2.json"
@@ -30,7 +30,7 @@ defmodule HackerNews.Infra.Mocks.HackerNews.BestStories.API do
       "id" => 3,
       "kids" => [400, 500, 600],
       "score" => 55,
-      "time" => 1706563254,
+      "time" => 1_706_563_254,
       "title" => "Title 3",
       "type" => "story",
       "url" => "//mocks/hackernews/item/3.json"
@@ -41,7 +41,7 @@ defmodule HackerNews.Infra.Mocks.HackerNews.BestStories.API do
       "id" => 4,
       "kids" => [400, 500, 600],
       "score" => 8,
-      "time" => 1703064398,
+      "time" => 1_703_064_398,
       "title" => "Title 4",
       "type" => "story",
       "url" => "//mocks/hackernews/item/4.json"
@@ -52,7 +52,7 @@ defmodule HackerNews.Infra.Mocks.HackerNews.BestStories.API do
       "id" => 5,
       "kids" => [400, 500, 600],
       "score" => 50,
-      "time" => 1702064398,
+      "time" => 1_702_064_398,
       "title" => "Title 5",
       "type" => "story",
       "url" => "//mocks/hackernews/item/5.json"
@@ -63,7 +63,7 @@ defmodule HackerNews.Infra.Mocks.HackerNews.BestStories.API do
       "id" => 6,
       "kids" => [400, 500, 600],
       "score" => 218,
-      "time" => 1706264398,
+      "time" => 1_706_264_398,
       "title" => "Title 6",
       "type" => "story",
       "url" => "//mocks/hackernews/item/6.json"
@@ -74,7 +74,7 @@ defmodule HackerNews.Infra.Mocks.HackerNews.BestStories.API do
       "id" => 7,
       "kids" => [400, 500, 600],
       "score" => 553,
-      "time" => 1206564398,
+      "time" => 1_206_564_398,
       "title" => "Title 7",
       "type" => "story",
       "url" => "//mocks/hackernews/item/7.json"
@@ -85,7 +85,7 @@ defmodule HackerNews.Infra.Mocks.HackerNews.BestStories.API do
       "id" => 8,
       "kids" => [400, 500, 600],
       "score" => 558,
-      "time" => 1406564398,
+      "time" => 1_406_564_398,
       "title" => "Title 8",
       "type" => "story",
       "url" => "//mocks/hackernews/item/8.json"
@@ -96,7 +96,7 @@ defmodule HackerNews.Infra.Mocks.HackerNews.BestStories.API do
       "id" => 9,
       "kids" => [400, 500, 600],
       "score" => 428,
-      "time" => 1506564398,
+      "time" => 1_506_564_398,
       "title" => "Title 9",
       "type" => "story",
       "url" => "//mocks/hackernews/item/9.json"
@@ -107,7 +107,7 @@ defmodule HackerNews.Infra.Mocks.HackerNews.BestStories.API do
       "id" => 10,
       "kids" => [400, 500, 600],
       "score" => 31,
-      "time" => 1606564398,
+      "time" => 1_606_564_398,
       "title" => "Title 10",
       "type" => "story",
       "url" => "//mocks/hackernews/item/10.json"
@@ -121,7 +121,8 @@ defmodule HackerNews.Infra.Mocks.HackerNews.BestStories.API do
   end
 
   def item(conn, %{"id" => id}) do
-    id = String.split(id, ".json")
+    id =
+      String.split(id, ".json")
       |> List.first()
       |> String.to_integer()
 
